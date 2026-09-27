@@ -1,0 +1,31 @@
+{
+  "name": "greencode",
+  "version": "1.0.0",
+  "description": "CLI - nucleo operacional da plataforma de logistica reversa de residuos eletronicos",
+  "main": "dist/cli/index.js",
+  "bin": {
+    "greencode": "dist/cli/index.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/cli/index.js",
+    "dev": "ts-node src/cli/index.ts",
+    "test": "npm run build && node tests/run-all.js",
+    "test:journey": "npm run build && node tests/run-journey.js",
+    "test:security": "npm run build && node tests/run-security.js",
+    "test:domain": "npm run build && node tests/run-domain.js",
+    "test:compliance": "npm run build && node tests/run-compliance.js",
+    "test:write-ahead": "npm run build && node tests/run-write-ahead.js",
+    "clean:data": "rimraf data"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "typescript": "^5.4.0",
+    "ts-node": "^10.9.2",
+    "rimraf": "^5.0.5"
+  }
+}
